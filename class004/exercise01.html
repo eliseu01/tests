@@ -16,9 +16,26 @@
     <h1>Hello World!</h1>
     <p>11:09 PM</p>
     <script>
-        window.alert('First alert!');
-        window.alert(window.confirm());
-        window.alert('Good morning, ' + window.prompt('What is your name?') + '!');
+        var name = null;
+        name = window.prompt('What is your name?');
+        if (name == "" || name == "null"){
+            name = window.prompt("Please, enter your name.")
+        }
+        if (name == "" || name == "null") name = "Stranger"
+        window.alert('Good morning, ' + name + '!');
+        var birthYear = Number(window.prompt("What is your birth year?"))
+        if(birthYear < 1900 || birthYear == NaN) birthYear = window.prompt("Please, enter a valid year, " + name + ".")
+        if(!(birthYear < 1900 || birthYear == NaN)){
+            var age = 2025 - birthYear
+            var correctAge = window.confirm("So, are you " + age + " years old?")
+            if (correctAge == false) {
+                age = age - 1
+                correctAge = window.confirm("Hmmm... OK. So, are you " + age + " years old, " + name + "?")
+            }
+            if (correctAge) window.alert("OK, " + name + ". You are " + age + " years old.")
+            else window.alert("Wrong something is not right, " + name + ", but OK.")
+        } else window.alert("Wrong something is not right, " + name + ", but OK.")
+        
     </script>
 </body>
 </html>
