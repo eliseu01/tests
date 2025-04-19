@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page 4 - Playing DOM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+            color: white;
+            font: normal 20pt Arial;
+            margin: 10px;
+        }
+
+        input[type=number] {
+            font: normal 14pt Arial;
+            width: 60px;
+            height: 18.4px;
+        }
+
+        input[type=button] {
+            height: 23.6px;
+            width: 50px;
+            margin-left: 10px;
+        }
+
+        .in-line {
+            display: flex;
+            margin: 15px 0;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Adding Values</h1>
+    <div class="in-line">
+        <input type="number" name="num1" id="num1">
+        <strong style="margin: 0 5px;">+</strong>
+        <input type="number" name="num2" id="num2">
+        <input type="button" id="but" value="Add">
+        </div>
+        </br>
+        <div class="resolution"></div>
+        <script>
+            var txt1 = document.querySelector("#num1");
+            var txt2 = document.querySelector("#num2");
+            var button1 = document.querySelector("#but");
+            var result = document.querySelector(".resolution");
+            button1.addEventListener("click", addValues);
+
+            function addValues() {
+                var n1 = Number(txt1.value);
+                var n2 = Number(txt2.value);
+                var res = n1 + n2;
+                result.innerText = `The result is ${res}`;
+            }
+        </script>
+</body>
+
+</html>

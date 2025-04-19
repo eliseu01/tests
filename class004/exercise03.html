@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page 3 - Playing DOM</title>
+    <style>
+        .container{
+            background: rgb(47, 198, 47);
+            color: white;
+            font: normal 15pt Arial;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Interact...
+    </div>
+    <script>
+        var color = "rgb(47, 198, 47)";
+        var a = document.querySelector(".container");
+        a.addEventListener("click", clicker);
+        a.addEventListener("mouseenter", entered);
+        a.addEventListener("mouseout", exited);
+
+        function clicker(){
+            a.style.background = "blue";
+            a.innerText = "Clicked";
+        }
+        function entered(){
+            a.innerText = "Entered";
+        }
+        function exited(){
+            a.innerText = "Exited";
+            a.style.background = color;
+        }
+    </script>
+</body>
+</html>

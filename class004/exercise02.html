@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page 2 - Using DOM</title>
+    <style>
+        body {
+            background: rgb(38, 57, 199);
+            color: white;
+            font: normal 12pt Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Learning to use DOM for JavaScript</h1>
+    <div class="container">
+        <p class="first">HTML and CSS are the visual static.</p>
+        <p id="special">JavaScript is interactivity.</p>
+    </div>
+    <!-- <h2>This DOM is a interesting tecnology</h2> -->
+
+    <script>
+        var header = window.document.getElementsByTagName("h1")[0];
+        header.style.color = "rgb(57, 199, 38)";
+        var p1 = window.document.getElementsByClassName("first")[0];
+        p1.innerText = "DOM is the Document Object Model."
+        var p2 = document.getElementById("special");
+        p2.innerHTML = "<strong>JavaScript</strong> is a dynamic language.";
+        p2.getElementsByTagName("strong")[0].style.color = "white"
+        var p = document.querySelector(".container")
+        p.style.color = "violet"
+    </script>
+</body>
+
+</html>
